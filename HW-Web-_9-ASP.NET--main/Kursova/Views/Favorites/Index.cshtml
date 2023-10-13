@@ -1,0 +1,22 @@
+﻿@model List<DataProject.Data.Entitys.Auto>;
+
+<div class="Favorites">
+    @foreach (var auto in Model)
+    {
+        <div class="flex">
+            <div>@auto.Mark</div>
+            <div class="img">
+                <img src="@auto.Image" />
+            </div>
+            <div>
+                <a>Buy</a>
+            </div>
+            <div>
+                <a asp-controller="Auto" asp-action="Information" asp-route-id="@auto.Id" asp-route-controllerName="Favorites">Information</a>
+            </div>
+            <div>
+                <a asp-action="RemoveFromFavorites" asp-route-id="@auto.Id" asp-route-controllerName="Favorites">Remove</a>
+            </div>
+        </div>
+    }
+</div>

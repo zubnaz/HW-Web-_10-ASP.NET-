@@ -1,0 +1,17 @@
+﻿@model List<DataProject.Data.Entitys.Order>;
+
+<div class="Orders">
+    @foreach (var auto in Model)
+    {
+    <div class="flex">
+        <div>@auto.Auto.Mark</div>
+        <div class="img">
+            <img src="@auto.Auto.Image" />
+        </div>
+        <div>@auto.Date</div>
+
+        <div>
+            <a asp-controller="Auto" asp-action="Information" asp-route-id="@auto.AutoId" asp-route-controllerName="Orders">Information</a>
+        </div>
+    </div>}
+</div>
